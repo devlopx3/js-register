@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Js registeration</title>
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<script src="https://kit.fontawesome.com/f78a3ea71c.js" crossorigin="anonymous"></script>
+
+
+	<script type="text/javascript">
+
+
+		//* validatiopn email func *//
+		function validEmail() {
+			var regex = /^[a-z\.\_\-\da-z]+\@[a-z\.\_\-\da-z]+(\.[a-z]+)+$/gi;
+			var email = TB_email.value;
+			if(regex.test(email)){
+				
+				emailMSG.innerHTML='Valid Email Address';
+				emailMSG.style.color ="green";
+			}
+
+			else
+			{
+				if(email == "")
+				{
+					emailMSG.innerHTML='E-mail Address Field Required *';
+					emailMSG.style.color ="red";
+				}
+				else
+				{
+					emailMSG.innerHTML='Invalid Email Address';
+					emailMSG.style.color ="black";
+				}
+			}
+		
+		}
+		//* validatiopn email func *//
+
+
+
+
+		//* First + Last => NAME *//
+
+		function checkFL(){
+
+			lastNAME = TB_lastname.value;
+			firstNAME = TB_firstname.value;
+			if(lastNAME == ""){
+				lastMSG.innerHTML='Last Name Field Required *';
+				lastMSG.style.color ="red";
+
+			}
+			else{
+				lastMSG.innerHTML='';
+			}
+			if(firstNAME == ""){
+				firstMSG.innerHTML='First Name Field Required *';
+				firstMSG.style.color ="red";
+			}
+			else{
+				firstMSG.innerHTML='';
+			}
+
+		}
+
+		//* First + Last => NAME *//
+
+
+
+		//*  address  *//
+		function checkADDRESS(){
+			address = TB_address.value;
+			if(address == ""){
+				addresMSG.innerHTML='Adress Field Required *';
+				addresMSG.style.color='red'
+			}
+			else{
+				addresMSG.innerHTML=''
+			}
+		}
+		//*  address  *//
+
+
+
+
+		//* password and confirm password *//
+
+		function checkPASSWORD(){
+			password = TB_password.value;
+			confirm_password = TB_ConfirmPassword.value;
+			if(password == ""){
+				passwordMSG.innerHTML='Password Field Required *';
+				passwordMSG.style.color='red';
+			}
+			if(confirm_password == ""){
+				confirmPasswordMSG.innerHTML='Confirm Password Field Required *';
+				confirmPasswordMSG.style.color='red';
+			}
+
+			if(confirm_password.length != 0 && password.length != 0){
+				if(password == confirm_password){
+					passwordMSG.innerHTML='Password ';
+					passwordMSG.style.color='green';
+					confirmPasswordMSG.innerHTML='Password Confirmed';
+					confirmPasswordMSG.style.color='green';
+
+				}
+				else{
+					passwordMSG.innerHTML='Password';
+					passwordMSG.style.color='red';
+					confirmPasswordMSG.innerHTML='Cant Confirm Your Password Check It Again';
+					confirmPasswordMSG.style.color='red';
+				}
+			}
+		}
+
+		//* password and confirm password *//
+
+
+		//* number validation *//
+
+		function numberVALIDATION()
+		{
+			var number = TB_number.value;
+			if (number.length == 11)
+			{
+				var regex = /^\d+$/;
+				if(regex.test(number)){
+					if(number.startsWith("010")){
+						numberMSG.innerHTML='Valid Number';
+						numberMSG.style.color ="green";	
+					}
+					else{
+						numberMSG.innerHTML='Sorry Our Service Work With Vodafone Only';
+						numberMSG.style.color ="red";
+					}			
+
+				}
+				else{
+
+					numberMSG.innerHTML='Invalid Number Use Onlu Number';
+					numberMSG.style.color ="red";
+				}
+			}
+
+			else{
+				numberMSG.innerHTML='Number Field Required Muset Be 11 number *';
+				numberMSG.style.color ="red";
+			
+			}
+
+		}
+
+		//* number validation *//
+
+		//* work all validation *//
+		function allJSF(){
+			checkFL()
+			validEmail()
+			checkADDRESS()
+			checkPASSWORD()
+			numberVALIDATION()
+			setInterval(function(){ allJSF(); }, 800);
+		}
+		//* work all validation *//
+
+
+
+
+	</script>
+
+
+
+</head>
+
+
+
+<body>
+	<div id='registerFORM'>
+
+		<div id='registerTEXT'>
+			<h1>Registeration Now!</h1>
+			<h3> take your chance  </h3>
+
+		</div>
+
+		<form>
+
+			<div id='flName'>
+				<!-- first name -->
+				<div id=firstName>
+					<div id='first'> <input type="text" id="TB_firstname" placeholder="First Name"> </div>
+					<div id='firstMSG'> </div>
+				</div>
+				<!-- first name -->
+
+
+				<!-- last name -->
+
+				<div id='lastName'>
+					<div id='last'> <input type="text" id="TB_lastname" placeholder="Last Name"> </div>
+					<div id='lastMSG'> </div>
+				</div>
+			</div>
+				<!-- last name -->
+			<div id='anotherINPUTS'>
+				<!-- address -->
+				<div id='address'>
+					<div>
+						<input type="text" id="TB_address" placeholder="Address">
+					</div>
+					<div id='addresMSG'>  </div>
+				</div>
+				<!-- address -->
+
+				<!-- number -->
+				<div id='number'>
+					<div>
+						<input type="text" id="TB_number" placeholder="Number">
+					</div>
+					<div id='numberMSG'>  </div>
+				</div>
+				<!-- number -->
+
+				<!-- email -->
+				<div id='email'>
+					<div>
+						<input type="text" id="TB_email" placeholder="E-mail">
+					</div>
+					<div id='emailMSG'>  </div>
+				</div>
+				<!-- email -->
+
+				<!-- [passowrd] -->
+				<div id='password'>
+					<div>
+						<input type="password" id="TB_password" placeholder="Password">
+					</div>
+					<div id='passwordMSG'>  </div>
+				</div>
+				<!-- [passowrd] -->
+
+				<!-- [ConfirmPassword] -->
+				<div id='ConfirmPassword'>
+					<div>
+						<input type="password" id="TB_ConfirmPassword" placeholder="Confirm Password">
+					</div>
+					<div id='confirmPasswordMSG'>  </div>
+				</div>
+				<!-- [ConfirmPassword] -->
+
+			</div>
+
+			<div id='btnDiv'>
+			<input type="button" id="btn" value="Register" onClick='allJSF()'>
+			</div>
+			
+		</form>
+
+	</div>
+
+</body>
+</html>
