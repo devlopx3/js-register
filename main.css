@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+	margin: 0px;
+	padding: 0px;
+	background-color: #ddeafe;
+	font-family: 'Kanit', sans-serif;
+}
+
+#registerFORM{
+	width: 600px;	
+	margin: 50px auto;
+	
+	
+}
+
+#registerFORM form{
+	width: 80%;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+
+#flName,#address,#number,#email,#password,#ConfirmPassword{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	
+	
+}
+
+#firstName,#lastName{
+	width: 45%;
+	margin: 0 7px;
+}
+
+/* inputs  */
+#flName input,#anotherINPUTS input{
+	margin-top: 20px;
+	width: 93%;
+	
+
+
+}
+
+
+#address,#number,#email,#password,#ConfirmPassword{
+	display: block;
+}
+
+input{
+	margin: 2px;
+	padding: 10px;
+	border: none;
+	border-radius: 12px;
+	box-shadow: 0px 2px 10px rgb(0 0 0 / 20%), 0px 10px 20px rgb(0 0 0 / 20%), 0px 5px 20px 1px rgba(0 0 0 / 20%);
+}
+
+input:focus,input:valid{
+		background-color: rgb(255, 255, 255);
+		outline: none;
+		color: #000;
+
+}
+
+input:placeholder{
+
+	color: #ccc;
+}
+/* inputs  */
+
+/* button */
+#btn{
+	width: 90%;
+	background: #98acc6;
+	color: #fff;
+	font-size: 13pt;
+	margin: 20px auto;
+}
+
+
+
+#btnDiv{
+	width: 50%;
+	margin: 0 auto;
+}
+/* button */
+
+
+/* iputs msg  */
+#registerTEXT{
+	color: #6583ab;
+	text-align: center;
+}
+
+#emailMSG,#lastMSG,#firstMSG,#addresMSG,#passwordMSG,#confirmPasswordMSG,#numberMSG{
+	margin: 0 0 5px 13px;
+}
+
+/* iputs msg  */
+
+
+
+@media screen and (max-width:  768px){
+
+	#registerFORM{
+		 width: auto;
+		 margin: 20px auto;
+	}
+	#registerFORM input{
+		width: 100%;
+		margin: 5px 0;
+	}
+	#firstName,#lastName{
+		width: 100%;
+		margin: 0;
+	}
+	#emailMSG,#lastMSG,#firstMSG,#addresMSG,#passwordMSG,#confirmPasswordMSG,#numberMSG{
+	font-size: 8pt;
+	}
+}
